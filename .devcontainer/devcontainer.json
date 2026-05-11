@@ -1,0 +1,31 @@
+{
+	"name": "Dev Container mu-workspace",
+	"build": {
+		"context": "../",
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"editor.codeActionsOnSave": {
+					"source.fixAll.eslint": "always" // ファイル保存時にESLintでフォーマット
+				},
+				"editor.formatOnSave": true
+			},
+			"extensions": [
+				"golang.go",
+				"reliutg.bulma-css-class-completion",
+				"dbaeumer.vscode-eslint",
+				"svelte.svelte-vscode"
+			]
+		}
+	},
+	"forwardPorts": [
+		3000,
+		3001
+	],
+	"onCreateCommand": "corepack yarn install",
+	"mounts": [
+		"type=volume,source=${containerWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules"
+	]
+}

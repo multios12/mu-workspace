@@ -1,0 +1,33 @@
+{
+  "name": "mu-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "mu-ui-lib",
+    "mmemo/front",
+    "sail/front"
+  ],
+  "engines": {
+    "node": ">=24.13.1 <25",
+    "yarn": "1.22.22"
+  },
+  "scripts": {
+    "dev:ui": "yarn workspace mu-ui-lib dev",
+    "build:ui": "yarn workspace mu-ui-lib build",
+    "check:ui": "yarn workspace mu-ui-lib check",
+    "dev:mmemo": "yarn workspace mmemo dev",
+    "dev:sail": "yarn workspace sail dev",
+    "dev:all": "concurrently \"yarn dev:ui\" \"yarn dev:mmemo\" \"yarn dev:sail\"",
+    "build:mmemo": "yarn workspace mmemo build",
+    "build:sail": "yarn workspace sail build",
+    "build:all": "yarn build:ui && yarn build:mmemo && yarn build:sail",
+    "check:mmemo": "yarn workspace mmemo check",
+    "check:sail": "yarn workspace sail check",
+    "check:all": "yarn check:ui && yarn check:mmemo && yarn check:sail",
+    "install:all": "yarn install --ignore-scripts"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
