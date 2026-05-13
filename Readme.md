@@ -35,5 +35,7 @@ yarn install
 
 ```bash
 git clone https://github.com/multios12/mmemo.git
+git clone https://github.com/multios12/ops-front.git
 git clone https://github.com/multios12/sail.git
+git clone https://github.com/multios12/mu-ui-lib.git
 ```

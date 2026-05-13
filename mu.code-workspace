@@ -4,10 +4,16 @@
       "path": "."
     },
     {
+      "path": "ops-front"
+    },
+    {
       "path": "mmemo"
     },
     {
       "path": "sail"
+    },
+    {
+      "path": "mu-ui-lib"
     }
   ]
 }
