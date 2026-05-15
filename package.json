@@ -6,6 +6,7 @@
   "workspaces": [
     "mu-ui-lib",
     "mmemo/front",
+    "home-sign/front",
     "sail/front"
   ],
   "engines": {
@@ -15,16 +16,19 @@
   "scripts": {
     "dev:ui": "yarn workspace mu-ui-lib dev",
     "build:ui": "yarn workspace mu-ui-lib build",
-    "check:ui": "yarn workspace mu-ui-lib check",
+    "check:ui": "yarn workspace mu-ui-lib run check",
     "dev:mmemo": "yarn workspace mmemo dev",
+    "dev:home-sign": "yarn workspace home-sign dev",
     "dev:sail": "yarn workspace sail dev",
-    "dev:all": "concurrently \"yarn dev:ui\" \"yarn dev:mmemo\" \"yarn dev:sail\"",
+    "dev:all": "concurrently \"yarn dev:ui\" \"yarn dev:mmemo\" \"yarn dev:home-sign\" \"yarn dev:sail\"",
     "build:mmemo": "yarn workspace mmemo build",
+    "build:home-sign": "yarn workspace home-sign build",
     "build:sail": "yarn workspace sail build",
-    "build:all": "yarn build:ui && yarn build:mmemo && yarn build:sail",
-    "check:mmemo": "yarn workspace mmemo check",
-    "check:sail": "yarn workspace sail check",
-    "check:all": "yarn check:ui && yarn check:mmemo && yarn check:sail",
+    "build:all": "yarn build:ui && yarn build:mmemo && yarn build:home-sign && yarn build:sail",
+    "check:mmemo": "yarn workspace mmemo run check",
+    "check:home-sign": "yarn workspace home-sign run check",
+    "check:sail": "yarn workspace sail run check",
+    "check:all": "yarn check:ui && yarn check:mmemo && yarn check:home-sign && yarn check:sail",
     "install:all": "yarn install --ignore-scripts"
   },
   "devDependencies": {

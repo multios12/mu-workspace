@@ -13,6 +13,9 @@
       "path": "sail"
     },
     {
+      "path": "home-sign"
+    },
+    {
       "path": "mu-ui-lib"
     }
   ]
